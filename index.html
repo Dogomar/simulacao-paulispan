@@ -23,41 +23,39 @@
 
     <main class="primeira-pagina" id="inicio">
 
-        <section class="heroi centro">
-            <!-- Troque src e poster pelos arquivos reais do vídeo da empresa -->
-            <video class="video" autoplay muted loop playsinline preload="metadata" poster="https://paulispan.com.br/wp-content/uploads/2025/02/prod-01.png">
-                <source src="https://youtu.be/DPl-C11jYnU?si=dWEQRjzEUfQGalR4" type="url">
-            </video>
-            <div class="container" id="sobre">
-                <h1>Indústria Brasileira de Panificação de Congelados</h1>
-                <p>A Paulispan é referência em panificação congelada, fornecendo qualidade e praticidade para supermercados, padarias e atacadistas.</p>
-                <a class="btn" href="#contato">Fale com a Paulispan</a>
+        <section class="heroi">
+            <div class="container heroi-grade">
+                <div class="video">
+                    <iframe src="https://www.youtube.com/embed/DPl-C11jYnU?autoplay=1&mute=1&loop=1&playlist=DPl-C11jYnU&playsinline=1&rel=0"
+                        title="Vídeo institucional da Paulispan" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="heroi-texto" id="sobre">
+                    <h1>Indústria Brasileira de Panificação de Congelados</h1>
+                    <p>A Paulispan é referência em panificação congelada, fornecendo qualidade e praticidade para supermercados, padarias e atacadistas.</p>
+                    <a class="btn" href="#contato">Fale com a Paulispan</a>
+                </div>
             </div>
         </section>
 
         <div id="produtos">
             <section class="marca">
-                <div class="container">
-                    <div class="nome">Paulispan</div>
-                    <div class="slider" data-slider aria-label="Linha Paulispan">
-                        <figure class="slide"><img src="https://paulispan.com.br/wp-content/uploads/2025/01/Tranca-doce.png" alt="" loading="lazy"><span>Pães Especiais</span></figure>
-                        <figure class="slide"><img src="https://paulispan.com.br/wp-content/uploads/2025/01/Caseiro-Doce.png" alt="" loading="lazy"><span>Pães Doces</span></figure>
-                        <figure class="slide"><img src="https://paulispan.com.br/wp-content/uploads/2025/01/Pao-Frances-noturno.png" alt="" loading="lazy"><span>Pães Franceses</span></figure>
-                    </div>
-                    <div class="pontos"></div>
+                <div class="nome">Paulispan</div>
+                <div class="slider" data-slider aria-label="Linha Paulispan">
+                    <figure class="slide"><img src="https://paulispan.com.br/wp-content/uploads/2025/01/Tranca-doce.png" alt="Pães Especiais" loading="lazy"><span>Pães Especiais</span></figure>
+                    <figure class="slide"><img src="https://paulispan.com.br/wp-content/uploads/2025/01/Caseiro-Doce.png" alt="Pães Doces" loading="lazy"><span>Pães Doces</span></figure>
+                    <figure class="slide"><img src="https://paulispan.com.br/wp-content/uploads/2025/01/Pao-Frances-noturno.png" alt="Pães Franceses" loading="lazy"><span>Pães Franceses</span></figure>
                 </div>
+                <div class="pontos"></div>
             </section>
 
             <section class="marca favori">
-                <div class="container">
-                    <div class="nome">Fávori</div>
-                    <div class="slider" data-slider aria-label="Linha Fávori">
-                        <figure class="slide"><img src="https://paulispan.com.br/wp-content/uploads/2025/01/kibe.png" alt="" loading="lazy"><span>Salgados Fritos</span></figure>
-                        <figure class="slide"><img src="https://paulispan.com.br/wp-content/uploads/2025/01/Croissant_PresQueijo.png" alt="" loading="lazy"><span>Salgados Assados</span></figure>
-                        <figure class="slide"><img src="https://paulispan.com.br/wp-content/uploads/2025/01/torta-limao.png" alt="" loading="lazy"><span>Doces</span></figure>
-                    </div>
-                    <div class="pontos"></div>
+                <div class="nome">Fávori</div>
+                <div class="slider" data-slider aria-label="Linha Fávori">
+                    <figure class="slide"><img src="https://paulispan.com.br/wp-content/uploads/2025/01/kibe.png" alt="Salgados Fritos" loading="lazy"><span>Salgados Fritos</span></figure>
+                    <figure class="slide"><img src="https://paulispan.com.br/wp-content/uploads/2025/01/Croissant_PresQueijo.png" alt="Salgados Assados" loading="lazy"><span>Salgados Assados</span></figure>
+                    <figure class="slide"><img src="https://paulispan.com.br/wp-content/uploads/2025/01/torta-limao.png" alt="Doces" loading="lazy"><span>Doces</span></figure>
                 </div>
+                <div class="pontos"></div>
             </section>
         </div>
 
@@ -87,7 +85,6 @@
         </div>
     </footer>
 
-    <!-- Botão de contato sempre visível; troque o link pelo WhatsApp/telefone real -->
     <a class="contato-fixo" href="#contato">Contato</a>
 
     <script>
@@ -102,7 +99,6 @@
             if (e.target.tagName === 'A') { nav.classList.remove('aberto'); btn.setAttribute('aria-expanded', false); }
         });
 
-        // sliders: pontos sincronizados com o scroll
         document.querySelectorAll('[data-slider]').forEach(slider => {
             const slides = [...slider.children];
             const pontos = slider.nextElementSibling;
@@ -120,24 +116,24 @@
                     if (d < menor) { menor = d; ativo = i; }
                 });
                 [...pontos.children].forEach((b, i) => b.setAttribute('aria-current', i === ativo));
+                slides.forEach((s, i) => s.classList.toggle('ativo', i === ativo));
             };
-            // arrastar com o mouse (no toque, o navegador já rola nativamente)
-            let x0 = 0, rolagem0 = 0, arrastando = false;
+            let x0 = 0, rolagem0 = 0, arrastando = false, moveu = false;
             slider.addEventListener('pointerdown', e => {
                 if (e.pointerType !== 'mouse' || e.button !== 0) return;
-                arrastando = true; x0 = e.clientX; rolagem0 = slider.scrollLeft;
+                arrastando = true; moveu = false; x0 = e.clientX; rolagem0 = slider.scrollLeft;
                 slider.classList.add('arrastando');
                 slider.setPointerCapture(e.pointerId);
             });
             slider.addEventListener('pointermove', e => {
                 if (!arrastando) return;
+                if (Math.abs(e.clientX - x0) > 5) moveu = true;
                 slider.scrollLeft = rolagem0 - (e.clientX - x0);
             });
             const soltar = () => {
                 if (!arrastando) return;
                 arrastando = false;
                 slider.classList.remove('arrastando');
-                // encaixa no slide mais próximo
                 const centro = slider.scrollLeft + slider.clientWidth / 2;
                 const alvo = slides.reduce((a, s) =>
                     Math.abs(s.offsetLeft + s.offsetWidth / 2 - centro) < Math.abs(a.offsetLeft + a.offsetWidth / 2 - centro) ? s : a);
@@ -146,6 +142,10 @@
             slider.addEventListener('pointerup', soltar);
             slider.addEventListener('pointercancel', soltar);
             slider.addEventListener('dragstart', e => e.preventDefault());
+            slides.forEach(s => s.addEventListener('click', () => {
+                if (moveu) { moveu = false; return; }
+                s.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            }));
             slider.addEventListener('scroll', marcar, { passive: true });
             marcar();
         });
