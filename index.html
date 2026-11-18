@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paulispan | Pães Congelados</title>
+    <link rel="stylesheet" href="seu-estilo-do-zero.css">
+</head>
+<body>
+
+    <header class="topo">
+        <a class="logo" href="#inicio">Paulispan</a>
+        <button class="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Abrir menu">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="nav" id="nav">
+            <a href="#sobre">Sobre</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#porque">Por que Paulispan</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <main class="primeira-pagina" id="inicio">
+
+        <section class="heroi centro">
+            <!-- Troque src e poster pelos arquivos reais do vídeo da empresa -->
+            <video class="video" autoplay muted loop playsinline preload="metadata" poster="https://paulispan.com.br/wp-content/uploads/2025/02/prod-01.png">
+                <source src="https://youtu.be/DPl-C11jYnU?si=dWEQRjzEUfQGalR4" type="url">
+            </video>
+            <div class="container" id="sobre">
+                <h1>Indústria Brasileira de Panificação de Congelados</h1>
+                <p>A Paulispan é referência em panificação congelada, fornecendo qualidade e praticidade para supermercados, padarias e atacadistas.</p>
+                <a class="btn" href="#contato">Fale com a Paulispan</a>
+            </div>
+        </section>
+
+        <div id="produtos">
+            <section class="marca">
+                <div class="container">
+                    <div class="nome">Paulispan</div>
+                    <div class="slider" data-slider aria-label="Linha Paulispan">
+                        <figure class="slide"><img src="https://paulispan.com.br/wp-content/uploads/2025/01/Tranca-doce.png" alt="" loading="lazy"><span>Pães Especiais</span></figure>
+                        <figure class="slide"><img src="https://paulispan.com.br/wp-content/uploads/2025/01/Caseiro-Doce.png" alt="" loading="lazy"><span>Pães Doces</span></figure>
+                        <figure class="slide"><img src="https://paulispan.com.br/wp-content/uploads/2025/01/Pao-Frances-noturno.png" alt="" loading="lazy"><span>Pães Franceses</span></figure>
+                    </div>
+                    <div class="pontos"></div>
+                </div>
+            </section>
+
+            <section class="marca favori">
+                <div class="container">
+                    <div class="nome">Fávori</div>
+                    <div class="slider" data-slider aria-label="Linha Fávori">
+                        <figure class="slide"><img src="https://paulispan.com.br/wp-content/uploads/2025/01/kibe.png" alt="" loading="lazy"><span>Salgados Fritos</span></figure>
+                        <figure class="slide"><img src="https://paulispan.com.br/wp-content/uploads/2025/01/Croissant_PresQueijo.png" alt="" loading="lazy"><span>Salgados Assados</span></figure>
+                        <figure class="slide"><img src="https://paulispan.com.br/wp-content/uploads/2025/01/torta-limao.png" alt="" loading="lazy"><span>Doces</span></figure>
+                    </div>
+                    <div class="pontos"></div>
+                </div>
+            </section>
+        </div>
+
+        <section class="centro" id="porque">
+            <div class="container">
+                <h2>Por que escolher os produtos Paulispan?</h2>
+                <p>Escolher Paulispan é garantir a qualidade! Oferecemos pães, salgados e doces congelados, além de logística, comodato de equipamentos e suporte técnico para o sucesso do seu negócio.</p>
+                <ul class="lista">
+                    <li><strong>Pães, salgados e doces</strong>Linha completa de congelados.</li>
+                    <li><strong>Logística e comodato</strong>Entrega e equipamentos para o seu ponto de venda.</li>
+                    <li><strong>Suporte técnico</strong>Acompanhamento para o seu negócio dar certo.</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="rodape" id="contato">
+        <div class="container">
+            <h3>Paulispan</h3>
+            <p>Itapetininga, SP<br>CEP: 18207-785</p>
+            <h3>Redes Paulispan</h3>
+            <div class="redes">
+                <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8V6.5c0-.7.2-1 1.1-1H17V2h-2.6C11.5 2 10 3.600 10 6.200V8H7.500v3.500H10V22h4V11.500h2.800L17.300 8z"/></svg></a>
+                <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7.800 2h8.400A5.800 5.800 0 0 1 22 7.800v8.400a5.800 5.800 0 0 1-5.800 5.800H7.800A5.800 5.800 0 0 1 2 16.200V7.800A5.800 5.800 0 0 1 7.800 2zm-.2 2A3.600 3.600 0 0 0 4 7.600v8.800A3.600 3.600 0 0 0 7.600 20h8.800a3.600 3.600 0 0 0 3.600-3.600V7.600A3.600 3.600 0 0 0 16.400 4zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.300-3.500a1.200 1.200 0 1 1 0 2.400 1.200 1.200 0 0 1 0-2.400z"/></svg></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão de contato sempre visível; troque o link pelo WhatsApp/telefone real -->
+    <a class="contato-fixo" href="#contato">Contato</a>
+
+    <script>
+        // menu hambúrguer
+        const btn = document.querySelector('.menu-btn');
+        const nav = document.getElementById('nav');
+        btn.addEventListener('click', () => {
+            const aberto = nav.classList.toggle('aberto');
+            btn.setAttribute('aria-expanded', aberto);
+        });
+        nav.addEventListener('click', e => {
+            if (e.target.tagName === 'A') { nav.classList.remove('aberto'); btn.setAttribute('aria-expanded', false); }
+        });
+
+        // sliders: pontos sincronizados com o scroll
+        document.querySelectorAll('[data-slider]').forEach(slider => {
+            const slides = [...slider.children];
+            const pontos = slider.nextElementSibling;
+            slides.forEach((s, i) => {
+                const b = document.createElement('button');
+                b.setAttribute('aria-label', 'Slide ' + (i + 1));
+                b.onclick = () => s.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                pontos.appendChild(b);
+            });
+            const marcar = () => {
+                const centro = slider.scrollLeft + slider.clientWidth / 2;
+                let ativo = 0, menor = Infinity;
+                slides.forEach((s, i) => {
+                    const d = Math.abs(s.offsetLeft + s.offsetWidth / 2 - centro);
+                    if (d < menor) { menor = d; ativo = i; }
+                });
+                [...pontos.children].forEach((b, i) => b.setAttribute('aria-current', i === ativo));
+            };
+            // arrastar com o mouse (no toque, o navegador já rola nativamente)
+            let x0 = 0, rolagem0 = 0, arrastando = false;
+            slider.addEventListener('pointerdown', e => {
+                if (e.pointerType !== 'mouse' || e.button !== 0) return;
+                arrastando = true; x0 = e.clientX; rolagem0 = slider.scrollLeft;
+                slider.classList.add('arrastando');
+                slider.setPointerCapture(e.pointerId);
+            });
+            slider.addEventListener('pointermove', e => {
+                if (!arrastando) return;
+                slider.scrollLeft = rolagem0 - (e.clientX - x0);
+            });
+            const soltar = () => {
+                if (!arrastando) return;
+                arrastando = false;
+                slider.classList.remove('arrastando');
+                // encaixa no slide mais próximo
+                const centro = slider.scrollLeft + slider.clientWidth / 2;
+                const alvo = slides.reduce((a, s) =>
+                    Math.abs(s.offsetLeft + s.offsetWidth / 2 - centro) < Math.abs(a.offsetLeft + a.offsetWidth / 2 - centro) ? s : a);
+                alvo.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            };
+            slider.addEventListener('pointerup', soltar);
+            slider.addEventListener('pointercancel', soltar);
+            slider.addEventListener('dragstart', e => e.preventDefault());
+            slider.addEventListener('scroll', marcar, { passive: true });
+            marcar();
+        });
+    </script>
+</body>
+</html>
